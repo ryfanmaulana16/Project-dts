@@ -75,9 +75,9 @@
             if($_GET['pesan'] == "gagal"){
               echo "<div class='alert alert-danger'>Login Gagal! <br> Username Atau Password Salah</div>";
             }else if($_GET['pesan'] == "logout"){
-              echo "Anda telah berhasil logout";
+              echo "<div class='alert alert-danger'>Anda Telah Log Out</div>";
             }else if($_GET['pesan'] == "belum_login"){
-              echo "Anda harus login untuk mengakses halaman admin";
+              echo "<div class='alert alert-danger'>Anda Harus Login Sebelum mengakses halaman tersebut";
             }
           }
             ?>
