@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <title>Input Siswa</title>
+    <title>Input Nilai</title>
 </head>
 <body>
     <?php
@@ -15,42 +15,43 @@
     include "../koneksi.php";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $nip       = $_POST["nip"];
             $nama       = $_POST["nama"];
             $username      = $_POST["username"];
             $password       = $_POST["password"];
-            $sql        = "INSERT into siswa (nama, username, password, bindo, bing, mtk, ipa) 
-                            VALUES  ('$nama', '$username', '$password', '0', '0', '0','0')";
+            $sql        = "INSERT into guru (nip, nama, username, password) 
+                            VALUES  ($nip, '$nama', '$username', '$password')";
             
         // START Eksekusi Data
         $hasil = mysqli_query($db, $sql);
         // END Eksekusi Data
 
         if ($hasil) {
-            header("location:guru_siswa.php");
+            header("location:guru.php");
         } else {
             echo "<div class='alert alert-danger'> Data Gagal Disimpan. </div>";
         }
         }
 
     ?>
-    <div class="jumbotron text-center" style="margin-bottom:0">
-        <h1>Selamat Datang</h1>
-        <p>Perfect, Social, Interest</p> 
-    </div>
     <div class="container">
         <h1>Masukkan Data Siswa Baru</h1>
         <form id="Reset" action="" method="post" id="form">
+            <div class="form-group">
+                <label for="nip">Nomor Induk Kepegawaian</label>
+                <input type="number" name="nip" class="form-control" id="" aria-describedby="" required>
+            </div>
             <div class="form-group">
                 <label for="nama">Nama Lengkap</label>
                 <input type="text" name="nama" class="form-control" id="" aria-describedby="" required>
             </div>
             <div class="form-group">
-                <label for="bindo">Username</label>
-                <input type="text" name="username" class="form-control" id="" required>
+                <label for="nama">Username Akun Guru</label>
+                <input type="text" name="username" class="form-control" id="" aria-describedby="" required>
             </div>
             <div class="form-group">
-                <label for="bing">Password</label>
-                <input type="text" name="password" class="form-control" id="" required>
+                <label for="nama">Password Akun Guru</label>
+                <input type="text" name="password" class="form-control" id="" aria-describedby="" required>
             </div>
             <a href="guru_siswa.php" class="btn btn-warning"> Kembali</a>
             <input type="button" onclick="newFunction()" class="btn btn-danger" value="Reset">

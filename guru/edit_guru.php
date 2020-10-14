@@ -19,12 +19,12 @@
 
             // START
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $nis     = $_POST["nis"];
+                $nip     = $_POST["nip"];
                 $username = $_POST["username"];
                 $nama  = $_POST["nama"];
                 $password  = $_POST["password"];
 
-                $sql = "UPDATE siswa SET nama='$nama',username='$username',password='$password' WHERE nis=$nis"; 
+                $sql = "UPDATE guru SET nama='$nama',username='$username',password='$password' WHERE nip=$nip"; 
                 
             // START
             $hasil = mysqli_query($db,$sql);
@@ -32,7 +32,7 @@
             
             // START cek hasil eksekusi
             if ($hasil) {
-                header("location:guru_siswa.php");
+                header("location:guru.php");
             } else {
                 echo "<div class='alert alert-danger'> Data Gagal Diubah. </div>";
             }
@@ -40,10 +40,10 @@
             }
 
             // START get data edit
-            if (isset($_GET['nis'])) {
-                $nis = $_GET['nis'];
+            if (isset($_GET['nip'])) {
+                $nip = $_GET['nip'];
 
-                $sql = "SELECT * FROM siswa where nis = $nis";
+                $sql = "SELECT * FROM guru where nip = $nip";
                 $hasil = mysqli_query($db, $sql);
                 $data = mysqli_fetch_assoc($hasil);
             }
@@ -53,9 +53,9 @@
 
     <h5>Kelola Siswa</h5>
     <form action="<?php echo($_SERVER['PHP_SELF']) ?>" method="post" id="form">
-            <div class="form-group">
-                <label for="nama">Nomor Induk Kepegawaian</label>
-                <input type="text" name="nip" placeholder="Masukan Nip" class="form-control" id="" aria-describedby="emailHelp" readonly required value="<?php echo $data['nama'] ?>">
+    <div class="form-group">
+                <label for="nip">Nomor Induk Kepegawai</label>
+                <input type="text" name="nip" placeholder="Masukan Nip" class="form-control" id="" aria-describedby="emailHelp" readonly required value="<?php echo $data['nip'] ?>">
             </div>
           <div class="form-group">
                 <label for="nama">Nama Lengkap Siswa</label>
