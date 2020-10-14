@@ -7,7 +7,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <title>Home | Guru</title>
 
@@ -27,7 +26,7 @@
       }
 	?>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">Nama Sekolah</a>
+      <div class="navbar-brand">DTS University</div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -46,7 +45,6 @@
       </div>
         <form class="form-inline my-2 my-lg-0">
           <div class="float-right">
-          <a href ="guru.php" class="fa fa-user-circle btn btn-primary" aria-hidden="true"> Guru</a>
           <a href ="logout.php" class="fa fa-times btn btn-warning" aria-hidden="true"> Log Out</a>
           </div>
         </form>
