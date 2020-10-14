@@ -34,7 +34,7 @@
         <p>Perfect, Social, Interest</p> 
     </div>
     <div class="container">
-        <h1>Masukkan Data Siswa baru</h1>
+        <h1>Masukkan Data Siswa Baru</h1>
         <form action="" method="post" id="form">
             <div class="form-group">
                 <label for="nama">Nama Lengkap</label>
