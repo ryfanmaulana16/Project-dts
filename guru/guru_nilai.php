@@ -13,6 +13,36 @@
 
 </head>
 <body>
+<?php 
+            session_start();
+	        if($_SESSION['status']!="login"){
+		    header("location:../login.php?pesan=belum_login");
+	        }
+	    ?>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Nama Sekolah</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="indexguru.php">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Raport Siswa <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="guru_siswa.php">Managemen Siswa <span class="sr-only"></span></a>
+            </li>
+        </div>
+          <form class="form-inline my-2 my-lg-0">
+            <div class="float-right"><a href ="logout.php" class="fa fa-times btn btn-warning" aria-hidden="true"> Log Out</a></div>
+          </form>
+        </div>
+      </nav>
+    <p>
     <div class="container">
         <h1>List Nilai Siswa</h1>
         <table class="table data">
@@ -24,8 +54,6 @@
               <th scope="col">Bahasa Inggris</th>
               <th scope="col">Matematika</th>
               <th scope="col">IPA</th>
-              <th scope="col">Rata-Rata</th>
-              <th scope="col">GRADE</th>
               <th scope="col">AKSI</th>
               </tr>
           </thead>
@@ -51,29 +79,7 @@
                     <td><?php echo $data['bing'] ?></td>
                     <td><?php echo $data['mtk'] ?></td>
                     <td><?php echo $data['ipa'] ?></td>
-                        <?php 
-                            $sqlgrade = "SELECT avg( bindo + bing + mtk + ipa)/4.0 as gra FROM siswa";
-                            $hasil = mysqli_query($db,$sqlgrade);
-                            foreach ($hasil as $key => $mata) {
-                            ?><td><?php echo round($mata['gra']) ?></td>
-                            <?php
-                            if($mata['gra'] >85){
-                                echo "<td>A</td>";
-                            }
-                            else if($mata['gra'] >=75  && $mata['gra']<85){
-                                echo "<td>B</td>";
-                            }
-                            else if($mata['gra'] >=65  && $mata['gra']<75){
-                                echo "<td>C</td>";
-                            }
-                            else if($mata['gra'] >=55  && $mata['gra']<65){
-                                echo "<td>D</td>";
-                            }
-                            else if($mata['gra'] >=0  && $mata['gra']<55){
-                                echo "<td>E</td>";
-                            }
-                            }
-                            ?>
+                        
                             </td>
                     <td><a href="edit_nilai.php?nis=<?php echo $data['nis'] ?>" class="btn btn-warning fa fa-pencil-square-o" >Edit</a>
 
@@ -84,7 +90,12 @@
             }
           ?>
         </table>
+        <hr>
     </div>
+
+    <footer class="container">
+      <p>&copy; Muhammad Syahril Syahbani & Ryfan Maulana DTS2020</p>
+    </footer>
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){

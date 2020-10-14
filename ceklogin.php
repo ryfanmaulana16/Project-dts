@@ -21,14 +21,14 @@
 		$_SESSION['username'] = $username;
 		$_SESSION['status'] = "login";
 		//menuju ke halaman index guru
-		header("location:guru/index.php");
+		header("location:guru/indexguru.php");
 	}
 	//Jika Murid Yang Login
 	else if($ceksiswa > 0){
 		$_SESSION['username'] = $username;
 		$_SESSION['status'] = "login";
 		//menuju ke halaman index siswa
-		header("location:siswa/index.php");
+		header("location:siswa/indexsiswa.php");
 	}
 	else{
 		//Login Gagal

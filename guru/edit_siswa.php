@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 <body>
+<?php 
+            session_start();
+	        if($_SESSION['status']!="login"){
+		    header("location:../login.php?pesan=belum_login");
+	        }
+	    ?>
 <div class="container">
         <?php
             include "../koneksi.php";

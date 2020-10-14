@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 <body>
+<?php 
+            session_start();
+	        if($_SESSION['status']!="login"){
+		    header("location:../login.php?pesan=belum_login");
+	        }
+	    ?>
 <div class="container">
         <?php
             include "../koneksi.php";
@@ -51,7 +57,11 @@
 
     <h5>Kelola Nilai Siswa</h5>
     <form action="<?php echo($_SERVER['PHP_SELF']) ?>" method="post" id="form">
-        <input type="text" readonly name="nis" value="<?php echo $data['nis'] ?>">
+    <div class="form-group">
+                <label for="nis">Nis</label>
+                <input type="text" class="form-control" readonly name="nis" value="<?php echo $data['nis'] ?>">
+            </div>
+        
           <div class="form-group">
                 <label for="nama">Nama</label>
                 <input type="text" name="nama" placeholder="Masukan Nama" class="form-control" id="" aria-describedby="emailHelp" readonly required value="<?php echo $data['nama'] ?>">
