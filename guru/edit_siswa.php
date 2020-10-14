@@ -14,13 +14,11 @@
             // START
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $nis     = $_POST["nis"];
+                $username = $_POST["username"];
                 $nama  = $_POST["nama"];
-                $bindo  = $_POST["bindo"];
-                $bing   = $_POST["bing"];
-                $mtk = $_POST["mtk"];
-                $ipa  = $_POST["ipa"];
+                $password  = $_POST["bindo"];
 
-                $sql = "UPDATE siswa SET bindo='$bindo',bing='$bing',mtk='$mtk',ipa='$ipa' WHERE nis=$nis"; 
+                $sql = "UPDATE siswa SET nama='$nama',username='$username',password='$password' WHERE nis=$nis"; 
                 
             // START
             $hasil = mysqli_query($db,$sql);
@@ -28,7 +26,7 @@
             
             // START cek hasil eksekusi
             if ($hasil) {
-                header("location:guru_nilai.php");
+                header("location:guru_siswa.php");
             } else {
                 echo "<div class='alert alert-danger'> Data Gagal Diubah. </div>";
             }
@@ -47,33 +45,23 @@
 
         ?>
 
-
-
-    <h5>Kelola Nilai Siswa</h5>
+    <h5>Kelola Siswa</h5>
     <form action="<?php echo($_SERVER['PHP_SELF']) ?>" method="post" id="form">
         <input type="text" readonly name="nis" value="<?php echo $data['nis'] ?>">
           <div class="form-group">
-                <label for="nama">Nama</label>
+                <label for="nama">Nama Lengkap Siswa</label>
                 <input type="text" name="nama" placeholder="Masukan Nama" class="form-control" id="" aria-describedby="emailHelp" readonly required value="<?php echo $data['nama'] ?>">
             </div>
             <div class="form-group">
-                <label for="warna">Nilai Bahasa Indonesia</label>
-                <input type="number" min="0" name="bindo" placeholder="Masukan Nilai Bahasa Indonesia" class="form-control" id="" required value="<?php echo $data['bindo'] ?>">
+                <label for="username">Username Siswa</label>
+                <input type="text"  name="username" placeholder="Masukan username baru" class="form-control" id="" required value="<?php echo $data['username'] ?>">
             </div>
             <div class="form-group">
-                <label for="stok">Nilai Bahasa Inggris</label>
-                <input type="number" min="0" name="bing" placeholder="Masukan Jumlah Stok" class="form-control" id="" required value="<?php echo $data['bing'] ?>">
+                <label for="password">Password Akses Siswa</label>
+                <input type="text" name="password" placeholder="Masukan password" class="form-control" id="" required value="<?php echo $data['password'] ?>">
             </div>
-            <div class="form-group">
-                <label for="satuan">Nilai Matematika</label>
-                <input type="number" min="0" name="mtk" placeholder="Masukan Satuan Produk" class="form-control" id="" required value="<?php echo $data['mtk'] ?>">
-            </div>
-            <div class="form-group">
-                <label for="harga">Nilai IPA</label>
-                <input type="number" min="0" name="ipa" placeholder="Masukan Harga Hanya Angka" class="form-control" id="" required value="<?php echo $data['ipa'] ?>">
-            </div>
-            <a href="guru_nilai.php" class="btn btn-warning "> Kembali</a>
-            <button type="reset" class="btn btn-danger">Reset</button>
+            <a href="guru_siswa.php" class="btn btn-warning "> Kembali</a>
+
             <button type="submit" class="btn btn-success">Simpan</button>
         </form>
       </div>

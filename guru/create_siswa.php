@@ -35,7 +35,7 @@
     </div>
     <div class="container">
         <h1>Masukkan Data Siswa Baru</h1>
-        <form action="" method="post" id="form">
+        <form id="Reset" action="" method="post" id="form">
             <div class="form-group">
                 <label for="nama">Nama Lengkap</label>
                 <input type="text" name="nama" class="form-control" id="" aria-describedby="" required>
@@ -48,10 +48,15 @@
                 <label for="bing">Password</label>
                 <input type="text" name="password" class="form-control" id="" required>
             </div>
-            <a href="indexguru.php" class="btn btn-warning"> Kembali</a>
+            <a href="guru_siswa.php" class="btn btn-warning"> Kembali</a>
+            <input type="button" onclick="newFunction()" class="btn btn-danger" value="Reset">
             <button type="submit" class="btn btn-success">Simpan</button>
         </form>
     </div>
-
+    <script>
+         function newFunction() {
+            document.getElementById("Reset").reset();
+         }
+      </script>
 </body>
 </html>

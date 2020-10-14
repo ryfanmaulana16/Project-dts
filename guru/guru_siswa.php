@@ -43,7 +43,7 @@
                     <td><?php echo $data['nama'] ?></td>
                     <td><?php echo $data['username'] ?></td>
                     <td><?php echo $data['password'] ?></td>
-                    <td><a href="edit_siswa.php?id=<?php echo $data['nis'] ?>" class="btn btn-warning fa fa-pencil-square-o" >Edit</a>
+                    <td><a href="edit_siswa.php?nis=<?php echo $data['nis'] ?>" class="btn btn-warning fa fa-pencil-square-o" >Edit</a>
                         <a href="<?php echo $_SERVER['PHP_SELF']?>?nis=<?php echo $data['nis']?>" class="btn btn-danger fa fa-trash">Hapus</a></td>
                 </tr>
           </tbody>
