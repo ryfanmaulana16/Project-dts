@@ -60,16 +60,14 @@
               </tr>
           </thead>
         <?php
-            include "../koneksi.php";
-
-            // START Get Data From Table Produk
-            $sql = "SELECT * FROM guru order by nama";
-            // END Get Data From Table Produk
-
-            // START mengeksekusi data
-            $hasil = mysqli_query($db,$sql);
-            foreach ($hasil as $key => $data) {
-                // END
+              include "../koneksi.php";
+              $validUser = mysqli_real_escape_string($db, $_SESSION['username']);
+              $sql = "SELECT * FROM guru WHERE username!='$validUser' LIMIT 1";
+              $hasil = mysqli_query($db, $sql);
+              if ($hasil->num_rows > 0) {
+                // output data of each row
+                while($data = $hasil->fetch_assoc()) {
+              ?>
         ?>
             <tbody>
                 <tr>
@@ -83,6 +81,7 @@
           </tbody>
           <?php
             }
+          }
               // END Eksekusi Data
 
               // Cek Apakah Ada Method Get di File Ini

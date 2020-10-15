@@ -52,7 +52,7 @@
         <table class="table data">
             <thead class="thead-dark">
               <tr>
-              <th scope="col">No</th>
+              <th scope="col">Nis</th>
               <th scope="col">Nama</th>
               <th scope="col">Username</th>
               <th scope="col">Password</th>
@@ -94,7 +94,7 @@
 
                 // kondisi berhasil atau tidak
                 if ($hasil) {
-                    header("Location:guru_siswa.php");
+                    echo("<script>location.href = 'guru_siswa.php';</script>");
                 } else {
                     echo "<div class='alert alert-danger'> Data gagal dihapus. </div>";
                 }

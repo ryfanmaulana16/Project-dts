@@ -61,7 +61,7 @@
             include "../koneksi.php";
 
             // START Get Data From Table Produk
-            $sql = "SELECT * FROM siswa ";
+            $sql = "SELECT * FROM siswa order by nama";
             
             // END Get Data From Table Produk
 
