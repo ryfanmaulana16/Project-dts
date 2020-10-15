@@ -65,7 +65,7 @@
                     </div> <!-- input-group.// -->
                 </div> <!-- form-group// -->
                 <button class="btn btn-success btn-block rad" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
-                <a href="#" id="forget">Forgot password?</a>
+                
              <hr>
                 <!-- <p>Don't have an account!</p>  -->
                 <!-- <button class="btn btn-primary btn-block rad" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Sign up New Account</button> -->
@@ -74,10 +74,12 @@
           if(isset($_GET['pesan'])){
             if($_GET['pesan'] == "gagal"){
               echo "<div class='alert alert-danger'>Login Gagal! <br> Username Atau Password Salah</div>";
+              echo '<script>alert("Login Gagal !!! Username atau Password Salah")</script>';
             }else if($_GET['pesan'] == "logout"){
               echo "<div class='alert alert-danger'>Anda Telah Log Out</div>";
             }else if($_GET['pesan'] == "belum_login"){
               echo "<div class='alert alert-danger'>Anda Harus Login Sebelum mengakses halaman tersebut";
+              echo '<script>alert("Anda Harus Login Sebelum Dapat mengakses halaman tersebut")</script>';
             }
           }
             ?>

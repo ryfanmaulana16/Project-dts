@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <title>Input Siswa</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <title>Managemen Siswa</title>
 </head>
 <body>
     <?php
@@ -33,10 +34,30 @@
         }
 
     ?>
-    <div class="jumbotron text-center" style="margin-bottom:0">
-        <h1>Selamat Datang</h1>
-        <p>Perfect, Social, Interest</p> 
-    </div>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand fa fa-book" href="#"> DTS University</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="indexguru.php">Home <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="guru_nilai.php">Raport Siswa <span class="sr-only">(current)</span></a>
+          </li>
+      </div>
+        <form class="form-inline my-2 my-lg-0">
+          <div class="float-right">
+          <a href ="logout.php" class="fa fa-times btn btn-warning" aria-hidden="true"> Log Out</a>
+          </div>
+        </form>
+      </div>
+    </nav>
+        <p>&nbsp
     <div class="container">
         <h1>Masukkan Data Siswa Baru</h1>
         <form id="Reset" action="" method="post" id="form">

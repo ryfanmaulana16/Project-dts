@@ -54,8 +54,8 @@
     <h5>Kelola Siswa</h5>
     <form action="<?php echo($_SERVER['PHP_SELF']) ?>" method="post" id="form">
             <div class="form-group">
-                <label for="nama">Nomor Induk Kepegawaian</label>
-                <input type="text" name="nip" placeholder="Masukan Nip" class="form-control" id="" aria-describedby="emailHelp" readonly required value="<?php echo $data['nama'] ?>">
+                <label for="nama">Nomor Induk Siswa</label>
+                <input type="text" name="nis" placeholder="Masukan Nis" class="form-control" id="" aria-describedby="emailHelp" readonly required value="<?php echo $data['nis'] ?>">
             </div>
           <div class="form-group">
                 <label for="nama">Nama Lengkap Siswa</label>

@@ -68,19 +68,19 @@
             </div>
             <div class="form-group">
                 <label for="warna">Nilai Bahasa Indonesia</label>
-                <input type="number" min="0" name="bindo" placeholder="Masukan Nilai Bahasa Indonesia" class="form-control" id="" required value="<?php echo $data['bindo'] ?>">
+                <input type="number" min="0" max="100" name="bindo" placeholder="Masukan Nilai Bahasa Indonesia" class="form-control" id="" required value="<?php echo $data['bindo'] ?>">
             </div>
             <div class="form-group">
                 <label for="stok">Nilai Bahasa Inggris</label>
-                <input type="number" min="0" name="bing" placeholder="Masukan Jumlah Stok" class="form-control" id="" required value="<?php echo $data['bing'] ?>">
+                <input type="number" min="0" max="100" name="bing" placeholder="Masukan Bilai Bahasa Inggris" class="form-control" id="" required value="<?php echo $data['bing'] ?>">
             </div>
             <div class="form-group">
                 <label for="satuan">Nilai Matematika</label>
-                <input type="number" min="0" name="mtk" placeholder="Masukan Satuan Produk" class="form-control" id="" required value="<?php echo $data['mtk'] ?>">
+                <input type="number" min="0"  max="100" name="mtk" placeholder="Masukan Nilai Matematika" class="form-control" id="" required value="<?php echo $data['mtk'] ?>">
             </div>
             <div class="form-group">
                 <label for="harga">Nilai IPA</label>
-                <input type="number" min="0" name="ipa" placeholder="Masukan Harga Hanya Angka" class="form-control" id="" required value="<?php echo $data['ipa'] ?>">
+                <input type="number" min="0"  max="100" name="ipa" placeholder="Masukan Nilai IPA" class="form-control" id="" required value="<?php echo $data['ipa'] ?>">
             </div>
             <a href="guru_nilai.php" class="btn btn-warning "> Kembali</a>
             <button type="reset" class="btn btn-danger">Reset</button>
