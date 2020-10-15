@@ -53,7 +53,7 @@
                 <label for="nama">Password Akun Guru</label>
                 <input type="text" name="password" class="form-control" id="" aria-describedby="" required>
             </div>
-            <a href="guru_siswa.php" class="btn btn-warning"> Kembali</a>
+            <a href="guru.php" class="btn btn-warning"> Kembali</a>
             <input type="button" onclick="newFunction()" class="btn btn-danger" value="Reset">
             <button type="submit" class="btn btn-success">Simpan</button>
         </form>

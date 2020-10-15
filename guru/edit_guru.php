@@ -69,7 +69,7 @@
                 <label for="password">Password Akses Siswa</label>
                 <input type="text" name="password" placeholder="Masukan password" class="form-control" id="" required value="<?php echo $data['password'] ?>">
             </div>
-            <a href="guru_siswa.php" class="btn btn-warning "> Kembali</a>
+            <a href="guru.php" class="btn btn-warning "> Kembali</a>
 
             <button type="submit" class="btn btn-success">Simpan</button>
         </form>
